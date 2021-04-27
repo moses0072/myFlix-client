@@ -7,5 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moses0072/myFlix-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/moses0072/myFlix-client/issues"
+  },
+  "homepage": "https://github.com/moses0072/myFlix-client#readme"
 }
