@@ -26488,6 +26488,7 @@ try {
   var _axios = require('axios');
   var _axiosDefault = _parcelHelpers.interopDefault(_axios);
   var _loginViewLoginView = require('../login-view/login-view');
+  var _registrationViewRegistrationView = require('../registration-view/registration-view');
   var _movieCardMovieCard = require('../movie-card/movie-card');
   var _movieViewMovieView = require('../movie-view/movie-view');
   var _jsxFileName = "C:\\Users\\User\\Documents\\careerfoundry\\myFlix-client\\src\\components\\main-view\\main-view.jsx";
@@ -26497,7 +26498,8 @@ try {
       this.state = {
         movies: [],
         selectedMovie: null,
-        user: null
+        user: null,
+        register: null
       };
     }
     componentDidMount() {
@@ -26521,8 +26523,13 @@ try {
         user
       });
     }
+    onRegister(register) {
+      this.setState({
+        register
+      });
+    }
     render() {
-      const {movies, selectedMovie, user} = this.state;
+      const {movies, selectedMovie, user, register} = this.state;
       // If there is no user, the LoginView is rendered. If there is a user logged in, the user details are passed as a prop to the LoginView
       if (!user) return (
         /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
@@ -26530,8 +26537,19 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 48,
+            lineNumber: 56,
             columnNumber: 23
+          }
+        })
+      );
+      if (!register) return (
+        /*#__PURE__*/_reactDefault.default.createElement(_registrationViewRegistrationView.RegistrationView, {
+          onRegister: register => this.onRegister(register),
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 58,
+            columnNumber: 27
           }
         })
       );
@@ -26541,7 +26559,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 51,
+            lineNumber: 61,
             columnNumber: 14
           }
         })
@@ -26552,7 +26570,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 54,
+            lineNumber: 64,
             columnNumber: 7
           }
         }, selectedMovie ? /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
@@ -26563,7 +26581,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 56,
+            lineNumber: 66,
             columnNumber: 13
           }
         }) : movies.map(movie => /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
@@ -26575,7 +26593,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 58,
+            lineNumber: 68,
             columnNumber: 11
           }
         })))
@@ -26588,7 +26606,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","@parcel/transformer-js/lib/esmodule-helpers.js":"7kyIT","../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7belF","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","axios":"7rA65","../login-view/login-view":"6M7fu"}],"7v6h3":[function(require,module,exports) {
+},{"react":"3b2NM","@parcel/transformer-js/lib/esmodule-helpers.js":"7kyIT","../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7belF","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","axios":"7rA65","../login-view/login-view":"6M7fu","../registration-view/registration-view":"7gvH2"}],"7v6h3":[function(require,module,exports) {
 var helpers = require("../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -29326,7 +29344,6 @@ try {
     _s();
     const [username, setUsername] = _react.useState('');
     const [password, setPassword] = _react.useState('');
-    const user = _react.useState('');
     const handleSubmit = e => {
       e.preventDefault();
       console.log(username, password);
@@ -29388,7 +29405,7 @@ try {
       }, "Submit"))
     );
   }
-  _s(LoginView, "PSrhXAzijO1Jg3CuZ57ntmou5wg=");
+  _s(LoginView, "u8HUa3o7avPyyTjEusvVQu3HE0Y=");
   _c = LoginView;
   // Avoiding bugs with prop-types
   LoginView.PropTypes = {
@@ -29406,6 +29423,140 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","@parcel/transformer-js/lib/esmodule-helpers.js":"7kyIT","../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7belF","prop-types":"4dfy5"}]},["1j6wU","68WUB","1DVjT"], "1DVjT", "parcelRequire279c")
+},{"react":"3b2NM","@parcel/transformer-js/lib/esmodule-helpers.js":"7kyIT","../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7belF","prop-types":"4dfy5"}],"7gvH2":[function(require,module,exports) {
+var helpers = require("../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "RegistrationView", function () {
+    return RegistrationView;
+  });
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _propTypes = require('prop-types');
+  var _propTypesDefault = _parcelHelpers.interopDefault(_propTypes);
+  var _jsxFileName = "C:\\Users\\User\\Documents\\careerfoundry\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx", _s = $RefreshSig$();
+  function RegistrationView(props) {
+    _s();
+    const [username, setUsername] = _react.useState('');
+    const [password, setPassword] = _react.useState('');
+    const [email, setEmail] = _react.useState('');
+    const [birthday, setBirthday] = _react.useState('');
+    const handleRegister = e => {
+      e.preventDefault();
+      console.log(username, password, email, birthday);
+    };
+    return (
+      /*#__PURE__*/_reactDefault.default.createElement("form", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16,
+          columnNumber: 5
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("label", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 17,
+          columnNumber: 7
+        }
+      }, "Username:", /*#__PURE__*/_reactDefault.default.createElement("input", {
+        type: "text",
+        value: username,
+        onChange: e => setUsername(e.target.value),
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19,
+          columnNumber: 9
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement("label", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22,
+          columnNumber: 7
+        }
+      }, "Password:", /*#__PURE__*/_reactDefault.default.createElement("input", {
+        type: "password",
+        value: password,
+        onChange: e => setPassword(e.target.value),
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24,
+          columnNumber: 9
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement("label", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27,
+          columnNumber: 9
+        }
+      }, "Email:", /*#__PURE__*/_reactDefault.default.createElement("input", {
+        type: "email",
+        value: email,
+        onChange: e => setEmail(e.target.value),
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29,
+          columnNumber: 9
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement("label", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32,
+          columnNumber: 9
+        }
+      }, "Birthday:", /*#__PURE__*/_reactDefault.default.createElement("input", {
+        type: "birthday",
+        value: birthday,
+        onChange: e => setBirthday(e.target.value),
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 34,
+          columnNumber: 9
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement("button", {
+        type: "register",
+        onClick: handleRegister,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37,
+          columnNumber: 9
+        }
+      }, "Register"))
+    );
+  }
+  _s(RegistrationView, "3oyMEwqCkAaZIZXrnz4rv7z0IbE=");
+  _c = RegistrationView;
+  // Avoiding bugs with prop-types
+  RegistrationView.PropTypes = {
+    register: _propTypesDefault.default.shape({
+      Username: _propTypesDefault.default.string.isRequired,
+      Password: _propTypesDefault.default.string.isRequired,
+      Email: _propTypesDefault.default.string.isRequired,
+      Birthday: _propTypesDefault.default.string
+    }),
+    onRegister: _propTypesDefault.default.func
+  };
+  var _c;
+  $RefreshReg$(_c, "RegistrationView");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+
+},{"react":"3b2NM","prop-types":"4dfy5","@parcel/transformer-js/lib/esmodule-helpers.js":"7kyIT","../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7belF"}]},["1j6wU","68WUB","1DVjT"], "1DVjT", "parcelRequire279c")
 
 //# sourceMappingURL=index.02675e63.js.map
