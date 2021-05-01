@@ -40,7 +40,7 @@ export function RegistrationView(props) {
 }
 
 //Avoiding bugs with prop-types
-RegistrationView.PropTypes ={
+RegistrationView.propTypes ={
   register: PropTypes.shape ({
     Username: PropTypes.string.isRequired,
     Password: PropTypes.string.isRequired,
