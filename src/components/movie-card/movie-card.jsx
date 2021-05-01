@@ -9,10 +9,12 @@ export class MovieCard extends React.Component {
     );
   }
 }
-
+// Avoiding bugs with PropTypes
 MovieCard.propTypes = {
   movie: PropTypes.shape({
-    Title: PropTypes.string
+    Title: PropTypes.string.isRequired,
+    Description: PropTypes.string.isRequired,
+    ImagePath: PropTypes.string.isRequired
   }).isRequired,
   onMovieClick: PropTypes.func.isRequired
 };
