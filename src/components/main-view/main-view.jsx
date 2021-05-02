@@ -61,6 +61,16 @@ export class MainView extends React.Component {
     const {movies, selectedMovie, user, register} = this.state;
 
     //If there is no user, the LoginView is rendered. If there is a user logged in, the user details are passed as a prop to the LoginView
+    if (!register) return (
+      (
+        <Row className='justify-content-md-center'>
+          <Col md={6}>
+            <RegistrationView onRegister={register => this.onRegister(register)}  toggleRegister={user => this.toggleRegister(user)} />
+          </Col>
+        </Row>
+      )
+    );
+    
     if (!user) return (
       (
         <Row className='justify-content-md-center'>
@@ -71,15 +81,7 @@ export class MainView extends React.Component {
       )
     );      
 
-    if (!register) return (
-      (
-        <Row className='justify-content-md-center'>
-          <Col md={6}>
-            <RegistrationView onRegister={register => this.onRegister(register)}  toggleRegister={user => this.toggleRegister(user)} />
-          </Col>
-        </Row>
-      )
-    );    
+        
 
     if (movies.length === 0) 
       return <div className="main-view" />;
