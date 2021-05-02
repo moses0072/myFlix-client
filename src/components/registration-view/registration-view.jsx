@@ -12,7 +12,14 @@ export function RegistrationView(props) {
   const handleRegister = (e) => {
     e.preventDefault();
     console.log(username, password, email, birthday);
+    props.onRegister(username);
   };
+
+  const toggleRegister = (e) => {
+    e.preventDefault();
+    props.toggleRegister();
+  }
+  
 
   return (
     
@@ -41,7 +48,8 @@ export function RegistrationView(props) {
         <Form.Control type='date' placeholder='Date of Birth' onChange={e => setBirthday(e.target.value)} />
       </Form.Group>
      
-      <Button variant='primary' type='submit' onClick={handleRegister}>Register</Button>
+      <Button variant='primary' type='submit' onClick={toggleRegister}>Register</Button>
+      <Button variant='primary' type='submit' onClick={handleRegister}>Login</Button>
     </Form>
     
      
@@ -79,5 +87,6 @@ RegistrationView.propTypes ={
     Email: PropTypes.string.isRequired,
     Birthday: PropTypes.string
     }),
-  onRegister: PropTypes.func 
+  onRegister: PropTypes.func,
+  toggleRegister: PropTypes 
 };

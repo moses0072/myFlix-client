@@ -26541,7 +26541,7 @@ try {
         register
       });
     }
-    handleRegister(register) {
+    toggleRegister(user) {
       this.setState({
         register: !this.state.register
       });
@@ -26568,7 +26568,7 @@ try {
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
           onLoggedIn: user => this.onLoggedIn(user),
-          handleRegister: user => this.handleRegister(user),
+          toggleRegister: user => this.toggleRegister(user),
           __self: this,
           __source: {
             fileName: _jsxFileName,
@@ -26596,7 +26596,7 @@ try {
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_registrationViewRegistrationView.RegistrationView, {
           onRegister: register => this.onRegister(register),
-          handleRegister: user => this.handleRegister(user),
+          toggleRegister: user => this.toggleRegister(user),
           __self: this,
           __source: {
             fileName: _jsxFileName,
@@ -30169,9 +30169,9 @@ try {
       // then call props.onLoggedIn(username)
       props.onLoggedIn(username);
     };
-    const handleRegister = e => {
+    const toggleRegister = e => {
       e.preventDefault();
-      props.handleRegister();
+      props.toggleRegister();
     };
     return (
       /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default, {
@@ -30240,9 +30240,9 @@ try {
           columnNumber: 7
         }
       }, "Submit"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
-        variant: "Primary",
+        variant: "primary",
         type: "submit",
-        onClick: handleRegister,
+        onClick: toggleRegister,
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -30261,7 +30261,7 @@ try {
       Password: _propTypesDefault.default.string.isRequired
     }),
     onLoggedIn: _propTypesDefault.default.func,
-    handleRegister: _propTypesDefault.default.func
+    toggleRegister: _propTypesDefault.default.func
   };
   var _c;
   $RefreshReg$(_c, "LoginView");
@@ -31283,13 +31283,18 @@ try {
     const handleRegister = e => {
       e.preventDefault();
       console.log(username, password, email, birthday);
+      props.onRegister(username);
+    };
+    const toggleRegister = e => {
+      e.preventDefault();
+      props.toggleRegister();
     };
     return (
       /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19,
+          lineNumber: 26,
           columnNumber: 5
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
@@ -31297,14 +31302,14 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20,
+          lineNumber: 27,
           columnNumber: 7
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21,
+          lineNumber: 28,
           columnNumber: 9
         }
       }, "Username:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -31313,7 +31318,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22,
+          lineNumber: 29,
           columnNumber: 9
         }
       }), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Text, {
@@ -31321,7 +31326,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23,
+          lineNumber: 30,
           columnNumber: 9
         }
       }, "* required")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
@@ -31329,14 +31334,14 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26,
+          lineNumber: 33,
           columnNumber: 7
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27,
+          lineNumber: 34,
           columnNumber: 9
         }
       }, "Password:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -31345,51 +31350,10 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28,
-          columnNumber: 9
-        }
-      }), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Text, {
-        className: "text-muted",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 29,
-          columnNumber: 9
-        }
-      }, "* required")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
-        controlId: "formEmail",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 32,
-          columnNumber: 7
-        }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 33,
-          columnNumber: 9
-        }
-      }, "Email address:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
-        type: "email",
-        placeholder: "Enter valid email please",
-        onChange: e => setEmail(e.target.value),
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 34,
-          columnNumber: 9
-        }
-      }), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Text, {
-        className: "text-muted",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 35,
           columnNumber: 9
         }
-      }, "* required"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Text, {
+      }), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Text, {
         className: "text-muted",
         __self: this,
         __source: {
@@ -31397,8 +31361,8 @@ try {
           lineNumber: 36,
           columnNumber: 9
         }
-      }, "I'll never share your email with anyone else.")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
-        controlId: "formBirthday",
+      }, "* required")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
+        controlId: "formEmail",
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -31412,6 +31376,47 @@ try {
           lineNumber: 40,
           columnNumber: 9
         }
+      }, "Email address:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
+        type: "email",
+        placeholder: "Enter valid email please",
+        onChange: e => setEmail(e.target.value),
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 41,
+          columnNumber: 9
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Text, {
+        className: "text-muted",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 42,
+          columnNumber: 9
+        }
+      }, "* required"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Text, {
+        className: "text-muted",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 43,
+          columnNumber: 9
+        }
+      }, "I'll never share your email with anyone else.")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
+        controlId: "formBirthday",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 46,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 47,
+          columnNumber: 9
+        }
       }, "Birthday:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
         type: "date",
         placeholder: "Date of Birth",
@@ -31419,20 +31424,30 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41,
+          lineNumber: 48,
           columnNumber: 9
         }
       })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
+        variant: "primary",
+        type: "submit",
+        onClick: toggleRegister,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 51,
+          columnNumber: 7
+        }
+      }, "Register"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
         variant: "primary",
         type: "submit",
         onClick: handleRegister,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44,
+          lineNumber: 52,
           columnNumber: 7
         }
-      }, "Register"))
+      }, "Login"))
     );
   }
   _s(RegistrationView, "3oyMEwqCkAaZIZXrnz4rv7z0IbE=");
@@ -31445,7 +31460,8 @@ try {
       Email: _propTypesDefault.default.string.isRequired,
       Birthday: _propTypesDefault.default.string
     }),
-    onRegister: _propTypesDefault.default.func
+    onRegister: _propTypesDefault.default.func,
+    toggleRegister: _propTypesDefault.default
   };
   var _c;
   $RefreshReg$(_c, "RegistrationView");
