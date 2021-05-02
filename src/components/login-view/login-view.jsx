@@ -16,9 +16,9 @@ export function LoginView(props) {
     props.onLoggedIn(username);
   };
 
-  const handleRegister = (e) => {
+  const toggleRegister = (e) => {
     e.preventDefault();
-    props.handleRegister();
+    props.toggleRegister();
     
   };
 
@@ -36,7 +36,7 @@ export function LoginView(props) {
       </Form.Group>
 
       <Button variant='primary' type='submit' onClick={handleSubmit}>Submit</Button>
-      <Button variant='Primary' type='submit' onClick={handleRegister}>Register</Button>
+      <Button variant='primary' type='submit' onClick={toggleRegister}>Register</Button>
     </Form>
   );
 }
@@ -48,5 +48,5 @@ LoginView.propTypes ={
     Password: PropTypes.string.isRequired
     }),
   onLoggedIn: PropTypes.func,
-  handleRegister: PropTypes.func
+  toggleRegister: PropTypes.func
 };

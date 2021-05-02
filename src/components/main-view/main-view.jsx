@@ -51,7 +51,7 @@ export class MainView extends React.Component {
     });
   }
 
-  handleRegister(register) {
+  toggleRegister(user) {
     this.setState({
       register: !this.state.register
     })
@@ -65,7 +65,7 @@ export class MainView extends React.Component {
       (
         <Row className='justify-content-md-center'>
           <Col md={6}>
-            <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={user => this.handleRegister(user)}/>
+            <LoginView onLoggedIn={user => this.onLoggedIn(user)} toggleRegister={user => this.toggleRegister(user)}/>
           </Col>
         </Row>
       )
@@ -75,7 +75,7 @@ export class MainView extends React.Component {
       (
         <Row className='justify-content-md-center'>
           <Col md={6}>
-            <RegistrationView onRegister={register => this.onRegister(register)}  handleRegister={user => this.handleRegister(user)} />
+            <RegistrationView onRegister={register => this.onRegister(register)}  toggleRegister={user => this.toggleRegister(user)} />
           </Col>
         </Row>
       )
