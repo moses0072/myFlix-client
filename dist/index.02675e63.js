@@ -26549,7 +26549,7 @@ try {
     render() {
       const {movies, selectedMovie, user, register} = this.state;
       // If there is no user, the LoginView is rendered. If there is a user logged in, the user details are passed as a prop to the LoginView
-      if (!user) return (
+      if (!register) return (
         /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
           className: "justify-content-md-center",
           __self: this,
@@ -26566,8 +26566,8 @@ try {
             lineNumber: 67,
             columnNumber: 11
           }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
-          onLoggedIn: user => this.onLoggedIn(user),
+        }, /*#__PURE__*/_reactDefault.default.createElement(_registrationViewRegistrationView.RegistrationView, {
+          onRegister: register => this.onRegister(register),
           toggleRegister: user => this.toggleRegister(user),
           __self: this,
           __source: {
@@ -26577,7 +26577,7 @@ try {
           }
         })))
       );
-      if (!register) return (
+      if (!user) return (
         /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
           className: "justify-content-md-center",
           __self: this,
@@ -26594,8 +26594,8 @@ try {
             lineNumber: 77,
             columnNumber: 11
           }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_registrationViewRegistrationView.RegistrationView, {
-          onRegister: register => this.onRegister(register),
+        }, /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
+          onLoggedIn: user => this.onLoggedIn(user),
           toggleRegister: user => this.toggleRegister(user),
           __self: this,
           __source: {
@@ -26611,7 +26611,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 85,
+            lineNumber: 87,
             columnNumber: 14
           }
         })
@@ -26622,7 +26622,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 88,
+            lineNumber: 90,
             columnNumber: 7
           }
         }, selectedMovie ? /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
@@ -26630,7 +26630,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 91,
+            lineNumber: 93,
             columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
@@ -26641,7 +26641,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 92,
+            lineNumber: 94,
             columnNumber: 15
           }
         })) : movies.map(movie => /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
@@ -26649,7 +26649,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 96,
+            lineNumber: 98,
             columnNumber: 17
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
@@ -26661,7 +26661,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 97,
+            lineNumber: 99,
             columnNumber: 19
           }
         }))))
@@ -30239,7 +30239,7 @@ try {
           lineNumber: 38,
           columnNumber: 7
         }
-      }, "Submit"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
+      }, "Login"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
         variant: "primary",
         type: "submit",
         onClick: toggleRegister,
