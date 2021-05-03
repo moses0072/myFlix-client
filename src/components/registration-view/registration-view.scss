@@ -1,0 +1,28 @@
+$primary-btn: #e7c246;
+$color: #eedfae;
+$primary-btn-hov: $color;
+$text: #000;
+
+.log-reg-view {
+  margin-top: 60px;
+  padding: 20px;
+  background-color: $color;
+}
+
+.primary-btn {
+  margin: 2px;
+  background-color: $primary-btn !important;
+  &:hover {
+    background-color: $primary-btn-hov !important;
+  }
+}
+
+.text-color {
+  color: $text;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.alert {
+  color: red;
+}

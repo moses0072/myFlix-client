@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+import './registration-view.scss';
+
 export function RegistrationView(props) {
   const [ username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -23,7 +25,7 @@ export function RegistrationView(props) {
 
   return (
     
-    <Form>
+    <Form className='log-reg-view'>
       <Form.Group controlId='formUsername'>
         <Form.Label>Username:</Form.Label>
         <Form.Control type='text' onChange= { e => setUsername(e.target.value)} />
@@ -39,17 +41,16 @@ export function RegistrationView(props) {
       <Form.Group controlId='formEmail'>
         <Form.Label>Email address:</Form.Label>
         <Form.Control type='email' placeholder='Enter valid email please' onChange={e => setEmail(e.target.value)} />
-        <Form.Text className='text-muted'>* required</Form.Text>
-        <Form.Text className='text-muted'>I'll never share your email with anyone else.</Form.Text>
+        <Form.Text className='text-muted'>* required <span className='alert'> I'll never share your email with anyone else. </span></Form.Text>
       </Form.Group>
 
       <Form.Group controlId='formBirthday'>
         <Form.Label>Birthday:</Form.Label>
         <Form.Control type='date' placeholder='Date of Birth' onChange={e => setBirthday(e.target.value)} />
       </Form.Group>
-     
-      <Button variant='primary' type='submit' onClick={handleRegister}>Register</Button>
-      <Button variant='primary' type='submit' onClick={toggleRegister}>Login</Button>
+      
+      <Button className='primary-btn'  type='submit' onClick={toggleRegister}><span className='text-color'>Login</span></Button>
+      <Button className='primary-btn'  type='submit' onClick={handleRegister}><span className='text-color'>Register</span></Button>  
     </Form>
     
   );

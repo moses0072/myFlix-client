@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
+
+import './movie-view.scss';
+
 export class MovieView extends React.Component {
   
   /*keypressCallback(event) {
@@ -31,10 +34,11 @@ export class MovieView extends React.Component {
         <div className="movie-description">
           <span className="lable">Description: </span>
           <span>{movie.Description}</span>
-
         </div>
-        <Button variant='primary' onClick={() => { onBackClick(null); }}>Back</Button>
+
+        <Button className='primary-btn' variant='primary' onClick={() => { onBackClick(null); }}><span className='text-color'>Back</span></Button>
       </div>
+      
     );
   }
 }
