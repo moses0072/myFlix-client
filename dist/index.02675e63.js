@@ -28269,7 +28269,8 @@ try {
   var _reactDefault = _parcelHelpers.interopDefault(_react);
   var _propTypes = require('prop-types');
   var _propTypesDefault = _parcelHelpers.interopDefault(_propTypes);
-  require('react-bootstrap/Button');
+  var _reactBootstrapButton = require('react-bootstrap/Button');
+  var _reactBootstrapButtonDefault = _parcelHelpers.interopDefault(_reactBootstrapButton);
   var _jsxFileName = "C:\\Users\\User\\Documents\\careerfoundry\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx";
   class MovieView extends _reactDefault.default.Component {
     /*keypressCallback(event) {
@@ -28355,7 +28356,7 @@ try {
             lineNumber: 33,
             columnNumber: 11
           }
-        }, movie.Description)), /*#__PURE__*/_reactDefault.default.createElement("button", {
+        }, movie.Description)), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
           variant: "primary",
           onClick: () => {
             onBackClick(null);
@@ -31430,7 +31431,7 @@ try {
       })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
         variant: "primary",
         type: "submit",
-        onClick: toggleRegister,
+        onClick: handleRegister,
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -31440,7 +31441,7 @@ try {
       }, "Register"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
         variant: "primary",
         type: "submit",
-        onClick: handleRegister,
+        onClick: toggleRegister,
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -31461,7 +31462,7 @@ try {
       Birthday: _propTypesDefault.default.string
     }),
     onRegister: _propTypesDefault.default.func,
-    toggleRegister: _propTypesDefault.default
+    toggleRegister: _propTypesDefault.default.func
   };
   var _c;
   $RefreshReg$(_c, "RegistrationView");
