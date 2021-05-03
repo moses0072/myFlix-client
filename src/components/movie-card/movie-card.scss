@@ -1,0 +1,27 @@
+$primary-btn: #e7c246;
+$color: #eedfae;
+$primary-btn-hov: $color;
+$text: #000;
+
+.primary-btn {
+  margin: 2px;
+  background-color: $primary-btn !important;
+  &:hover {
+    background-color: $primary-btn-hov !important;
+  }
+}
+
+.text-color {
+  color: $text;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.movie-card {
+  margin: 60px 0px 60px 0px;
+
+  color: #000;
+  background-color: $color !important;
+  border-color: $primary-btn !important;
+  box-shadow: 5px 5px 10px grey !important;
+}
