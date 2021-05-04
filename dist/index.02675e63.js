@@ -26546,7 +26546,7 @@ try {
         headers: {
           Authorization: `Bearer ${token}`
         }
-      }).then(Response => {
+      }).then(response => {
         this.setState({
           movies: response.data
         });
@@ -30343,7 +30343,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","@parcel/transformer-js/lib/esmodule-helpers.js":"7kyIT","../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7belF","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","./login-view.scss":"3ueKO","axios":"7rA65","prop-types":"4dfy5"}],"6A5ko":[function(require,module,exports) {
+},{"react":"3b2NM","@parcel/transformer-js/lib/esmodule-helpers.js":"7kyIT","../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7belF","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","./login-view.scss":"3ueKO","prop-types":"4dfy5","axios":"7rA65"}],"6A5ko":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
