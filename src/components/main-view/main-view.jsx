@@ -2,11 +2,14 @@ import React from 'react';
 import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+
+import './main-view.scss';
 export class MainView extends React.Component {
   
   constructor() {
@@ -20,15 +23,13 @@ export class MainView extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://mytopfilms.herokuapp.com/movies')
-      .then(Response => {
-        this.setState ({
-          movies: Response.data
-        });
-      })
-      .catch(error => {
-        console.log(error);
+    let accessToken = localStorage.getItem('token')
+    if (accessToken !== null) {
+      this.setState({
+        user:localStorage.getItem('user')
       });
+      this.getMovies(accessToken);
+    }
   }
 
 // when a movie is clicked, this function is invoked and updates the state of the selectedMovie property to that movie   
@@ -39,47 +40,77 @@ export class MainView extends React.Component {
   }
 
   //When a user successfully logs in , this function updates the user property in state to that particular user
-  onLoggedIn(user){
+  onLoggedIn(authData) {
+    console.log(authData);
     this.setState({
-      user
+      user: authData.user.Username
     });
+    localStorage.setItem('token', authData.token);
+    localStorage.setItem('user', authData.user.Username);
+    this.getMovies(authData.token);
   }
 
+  getMovies(token) {
+    axios.get('https://mytopfilms.herokuapp.com/movies', {
+      headers: {Authorization: `Bearer ${token}`}
+    })
+    .then(response => {
+      this.setState({
+        movies: response.data 
+      });
+    })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
+
+  onLoggedOut() {
+    localStorage.clear();
+    this.setState({
+      user: null
+    });
+  }
   onRegister(register) {
     this.setState({
       register
     });
   }
 
-  handleRegister(register) {
+  toggleRegister() {
     this.setState({
       register: !this.state.register
-    })
+    });
   }
+
+  
 
   render() {
     const {movies, selectedMovie, user, register} = this.state;
 
+    
+
     //If there is no user, the LoginView is rendered. If there is a user logged in, the user details are passed as a prop to the LoginView
+    if (!register) return (
+      (
+        <Row className='justify-content-md-center'>
+          <Col md={6}>
+            <RegistrationView onRegister={register => this.onRegister(register)}  toggleRegister={user => this.toggleRegister(user)} />
+          </Col>
+        </Row>
+      )
+    );
+    
     if (!user) return (
       (
         <Row className='justify-content-md-center'>
           <Col md={6}>
-            <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={user => this.handleRegister(user)}/>
+            <LoginView onLoggedIn={user => this.onLoggedIn(user)} toggleRegister={user => this.toggleRegister(user)}/>
           </Col>
         </Row>
       )
     );      
 
-    if (!register) return (
-      (
-        <Row className='justify-content-md-center'>
-          <Col md={6}>
-            <RegistrationView onRegister={register => this.onRegister(register)}  handleRegister={user => this.handleRegister(user)} />
-          </Col>
-        </Row>
-      )
-    );    
+        
 
     if (movies.length === 0) 
       return <div className="main-view" />;
@@ -99,7 +130,8 @@ export class MainView extends React.Component {
             ))  
             
         }
-      </Row>
+        <Button variant='primary' className='primary-btn' onClick={() => {this.onLoggedOut()}}>Logout</Button>
+      </Row>    
     );
   }  
 }
