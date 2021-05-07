@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
@@ -22,15 +23,13 @@ export class MainView extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://mytopfilms.herokuapp.com/movies')
-      .then(Response => {
-        this.setState ({
-          movies: Response.data
-        });
-      })
-      .catch(error => {
-        console.log(error);
+    let accessToken = localStorage.getItem('token')
+    if (accessToken !== null) {
+      this.setState({
+        user:localStorage.getItem('user')
       });
+      this.getMovies(accessToken);
+    }
   }
 
 // when a movie is clicked, this function is invoked and updates the state of the selectedMovie property to that movie   
@@ -65,13 +64,19 @@ export class MainView extends React.Component {
       });
   }
 
+  onLoggedOut() {
+    localStorage.clear();
+    this.setState({
+      user: null
+    });
+  }
   onRegister(register) {
     this.setState({
       register
     });
   }
 
-  toggleRegister(user) {
+  toggleRegister() {
     this.setState({
       register: !this.state.register
     });
@@ -81,6 +86,8 @@ export class MainView extends React.Component {
 
   render() {
     const {movies, selectedMovie, user, register} = this.state;
+
+    
 
     //If there is no user, the LoginView is rendered. If there is a user logged in, the user details are passed as a prop to the LoginView
     if (!register) return (
@@ -123,7 +130,8 @@ export class MainView extends React.Component {
             ))  
             
         }
-      </Row>
+        <Button variant='primary' className='primary-btn' onClick={() => {this.onLoggedOut()}}>Logout</Button>
+      </Row>    
     );
   }  
 }
