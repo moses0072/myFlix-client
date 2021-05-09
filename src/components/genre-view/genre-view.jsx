@@ -2,6 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import { DirectorView } from '../director-view/director-view';
 
 import './genre-view.scss';
 
@@ -19,7 +20,7 @@ export class GenreView extends React.Component {
           <span className="value">{genre.Description}</span>
         </div>
         <div className="genre-movies">
-          <span className="label">Movies directed by {genre.Name}: </span>
+          <span className="label">Movies Genre {genre.Name}: </span>
           <div>
             {movies.map((m) => {
               if (m.Genre.Name === genre.Name) {
@@ -30,7 +31,7 @@ export class GenreView extends React.Component {
                       <Card.Body>
                         <Card.Title>{m.Title}</Card.Title>
                         <Link to={`/movies/${m._id}`}>
-                          <Button className="primary-btn">Details</Button>
+                          <Button className="primary-btn"><span className='text-color'>Details</span></Button>
                         </Link>
                       </Card.Body>
                     </Card>
@@ -40,7 +41,7 @@ export class GenreView extends React.Component {
             })}
           </div>
         </div>
-        <Button variant="secondary" onClick={() => { onBackClick(null) }}>Back</Button>
+        <Button className='primary-btn' onClick={() => { onBackClick(null) }}><span className='text-color'>Back</span></Button>
       </div>
     );
   }

@@ -9,13 +9,11 @@ import { Link } from "react-router-dom";
 import './profile-view.scss';
 
 export function ProfileUpdate(props) {
-
-  
+ 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
-
 
   const user = props.user;
   
@@ -56,8 +54,7 @@ export function ProfileUpdate(props) {
       })
       .then(response => {
         alert("Your account has been deleted");
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
+        localStorage.clear();
         window.open("/", "_self");
       })
       .catch(e => {

@@ -42,7 +42,7 @@ export class DirectorView extends React.Component {
                     <Card.Body>
                       <Card.Title>{m.Title}</Card.Title>
                       <Link to={`/movies/${m._id}`}>
-                        <Button className='primary-btn'>Deteils</Button>
+                        <Button className='primary-btn'><span className='text-color'>Deteils</span></Button>
                       </Link>
                     </Card.Body>
                   </Card>
@@ -52,7 +52,7 @@ export class DirectorView extends React.Component {
           })}
         </div>
       </div>
-      <Button className='primary-btn' onClick={() => { onBackClick(null) }}>Back</Button>
+      <Button className='primary-btn' onClick={() => { onBackClick(null) }}><span className='text-color'>Back</span></Button>
       </div>
     );
   }
