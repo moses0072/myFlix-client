@@ -81,15 +81,15 @@ export function RegistrationView(props) {
     <Form className='log-reg-view'>
       <Form.Group controlId='formUsername'>
         <Form.Label>Username:</Form.Label>
-        <Form.Control type='text' onChange= { e => setUsername(e.target.value)} />
+        <Form.Control type='text' value='username' onChange= { e => setUsername(e.target.value)} />
         <Form.Text className='text-muted'>* required</Form.Text>
       </Form.Group>
 
-      {Object.keys(usernameError).map((key) => {
-        return (
-          <div className ='alert' key={key} >{usernameError[key]}</div>
-        );
-      })}
+        {Object.keys(usernameError).map((key) => {
+          return (
+            <div className ='alert' key={key} >{usernameError[key]}</div>
+          );
+        })}
 
       <Form.Group controlId='formPassword'>
         <Form.Label>Password:</Form.Label>
@@ -97,15 +97,15 @@ export function RegistrationView(props) {
         <Form.Text className='text-muted'>* required</Form.Text>
       </Form.Group>
 
-      {Object.keys(passwordError).map((key) => {
-        return (
-          <div className ='alert' key = {key} >{passwordError[key]}</div>
-        );
-      })}
+        {Object.keys(passwordError).map((key) => {
+          return (
+            <div className ='alert' key = {key} >{passwordError[key]}</div>
+          );
+        })}
 
       <Form.Group controlId='formEmail'>
         <Form.Label>Email address:</Form.Label>
-        <Form.Control type='email' placeholder='Enter valid email please' onChange={e => setEmail(e.target.value)} />
+        <Form.Control type='email' value={email} placeholder='Enter valid email please' onChange={e => setEmail(e.target.value)} />
         <Form.Text className='text-muted'>* required <span className='alert'> I'll never share your email with anyone else. </span></Form.Text>
       </Form.Group>
 
@@ -117,11 +117,15 @@ export function RegistrationView(props) {
 
       <Form.Group controlId='formBirthday'>
         <Form.Label>Birthday:</Form.Label>
-        <Form.Control type='date' placeholder='Date of Birth' onChange={e => setBirthday(e.target.value)} />
+        <Form.Control type='date' value={birthday} placeholder='Date of Birth' onChange={e => setBirthday(e.target.value)} />
       </Form.Group>
       
+<<<<<<< Updated upstream
       <Button className='primary-btn'  type='submit' onClick={toggleRegister}><span className='text-color'>Login</span></Button>
       <Button className='primary-btn'  type='submit' onClick={handleRegister}><span className='text-color'>Register</span></Button>  
+=======
+      <Button variant='primary' className='primary-btn'  type='submit' onClick={handleRegister}><span className='text-color'>Register</span></Button>
+>>>>>>> Stashed changes
     </Form>
     
   );
@@ -135,6 +139,9 @@ RegistrationView.propTypes ={
     Email: PropTypes.string.isRequired,
     Birthday: PropTypes.string
     }),
+<<<<<<< Updated upstream
   onRegister: PropTypes.func,
   toggleRegister: PropTypes .func
+=======
+>>>>>>> Stashed changes
 };
