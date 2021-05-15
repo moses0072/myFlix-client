@@ -23,7 +23,8 @@ export function LoginView(props) {
     if (isValid) {
       axios.post('https://mytopfilms.herokuapp.com/login', {
         Username: username,
-        Password: password
+        Password: password,
+
       }).then (response => {
         const data = response.data;
         props.onLoggedIn(data);

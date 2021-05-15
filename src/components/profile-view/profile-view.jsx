@@ -6,6 +6,7 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup'
 import Row from 'react-bootstrap/Row';
 import { Link } from 'react-router-dom';
+import Col from 'react-bootstrap/Col';
 
 
 
@@ -17,13 +18,13 @@ export class ProfileView extends React.Component {
     super();
     this.state = {
       username: '',
+      password: '',
       email: '',
       birthday: '',
-      FavoriteMovies: [],
-      userData: ''
+      userData: '',
+      favorites: []
     };
   }
-  
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
@@ -31,30 +32,20 @@ export class ProfileView extends React.Component {
     }
   }
 
-  getUser(token) {
-    let username =localStorage.getItem('user');
-    axios.get (`https://mytopmovies.herokuapp.com/users/${username}`, {
-      headers: { Authorization: `Bearer ${token}` }
-    }).then(response => { 
+  getUser() {
     this.setState({
-      userData: response.data,
-      username: response.data.username,
-      password: response.data.password,
-      email: response.data.email,
-      birthday: response.data.birthday,
-      FavoriteMovies: response.data.FavoriteMovies
+      username: localStorage.getItem("user"),
+      email: localStorage.getItem("email"),
+      birthday: localStorage.getItem('birthday'),
+      favorites: localStorage.getItem("FavoriteMovies"),
     });
-  }).catch(function (error) {
-    console.log(error);
-  });
-}
-  
+  }
+
   //Delete Movie from user favorite list
-  removeFavorite(e, favorite) {
+  removeFavorite(e, favorites) {
     e.preventDefault();
-    console.log(favorite);
     
-    axios.delete(`https://mytopmovies.herokuapp.com/users/${localStorage.getItem('user')}/movies/${favorite}`, 
+    axios.delete(`https://mytopfilms.herokuapp.com/users/${localStorage.getItem('user')}/movies/${favorites}/${movie._id}`, 
      { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } 
     }).then(response => {
       this.getUser(localStorage.getItem('token'));
@@ -63,14 +54,19 @@ export class ProfileView extends React.Component {
       alert('Movie can\'t be removed')
     });
   }
-  
-  handleChange(e) {
-    this.setState({[e.target.name]: e.target.value});
+  handleChange(e, favorite) {
+    this.setState({ [e.target.name]: e.target.value });
+    this.setState({ [favorite.target.name]: favorite.target.value });
   }
-
   render() {  
-    const { username, email, birthday, FavoriteMovies} = this.state;
-
+    const { username, email, birthday, favorites} = this.state;
+    const movies = JSON.parse(localStorage.getItem('movies')); 
+     const favoriteMovieList = movies.filter((movie => {
+      return (
+        movies.includes(movie._id)
+      );
+    }));
+    console.log(movies);
     return(
       <div className='log-reg-view'>
         <Card className='log-reg-view'>
@@ -93,27 +89,18 @@ export class ProfileView extends React.Component {
               <ListGroup.Item>
                 FavoriteMovies:
                 <div>
-                  {FavoriteMovies.length === 0 && (
-                    <div>
-                      <span className='text-color'>Favoritelist is still empty!</span>
-                    </div>
-                  )}
-                  {FavoriteMovies.length > 0 && (
                     <ul>
-                      {FavoriteMovies.map(favorite => (
-                        <li key={favorite}>
-                          
+                      {favoriteMovieList.map(favorites => (
+                        <li key={favorites}>
                           {
-                            JSON.parse(localStorage.getItem('movies')).find(
-                              movie => movie._id === favorite
-                            ).title
+                            favoriteMovieList.find(
+                              movie => movie._id === favorites
+                            ).Title
                           }
-                          <Button className='primary-btn' onClick={e => this.removeFavorite(e, favorite)}><span className='text-color'>Remove Favorite Movie</span></Button>  
-                          
-                        </li>
+                          <Button className='primary-btn' onClick={() => this.removeFavorite(favorites)}><span className='text-color'>Remove Favorite Movie</span></Button>                           
+                        </li>                        
                       ))}
-                    </ul>
-                  )}
+                    </ul> 
                 </div>
               </ListGroup.Item>
             </ListGroup>

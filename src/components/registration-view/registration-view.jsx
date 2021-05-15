@@ -109,7 +109,7 @@ export function RegistrationView(props) {
       {Object.keys(emailError).map((key) => {
         return (
           <div className ='alert' key={key}>{emailError[key]} </div>
-        )
+        );
       })}
 
       <Form.Group controlId='registerBirthday'>

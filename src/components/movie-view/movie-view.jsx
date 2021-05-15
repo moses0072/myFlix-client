@@ -17,14 +17,14 @@ export function  MovieView(props) {
   function addFav (e) {
     e.preventDefault();
 
-    axios.post(`https://mytopfilms.herokuapp.com/users/${localStorage.getItem('user')}/movies/${movie._id}`,
+    axios.post(`https://mytopfilms.herokuapp.com/users/${localStorage.getItem('user')}/favorites/${movie._id}`,
     {
       username: localStorage.getItem('user')
     },
     {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     }
-    ).then(Response => {
+    ).then(response => {
       console.log(response);
       alert('Movie has been added to your Favorite list!');
       }). catch (e => {
