@@ -36067,7 +36067,7 @@ try {
     /*Delete Movie from user favorite list*/
     removeFavorite(e, favorites) {
       e.preventDefault();
-      _axiosDefault.default.delete(`https://mytopfilms.herokuapp.com/users/${localStorage.getItem('user')}/movies/${favorites}/${movie._id}`, {
+      _axiosDefault.default.delete(`https://mytopfilms.herokuapp.com/users/${localStorage.getItem('user')}/movies/${favorites}/`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
@@ -36078,12 +36078,12 @@ try {
         alert('Movie can\'t be removed');
       });
     }
-    handleChange(e, favorite) {
+    handleChange(e, favorites) {
       this.setState({
         [e.target.name]: e.target.value
       });
       this.setState({
-        [favorite.target.name]: favorite.target.value
+        [favorites.target.name]: favorites.target.value
       });
     }
     render() {

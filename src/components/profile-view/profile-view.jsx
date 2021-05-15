@@ -45,7 +45,7 @@ export class ProfileView extends React.Component {
   removeFavorite(e, favorites) {
     e.preventDefault();
     
-    axios.delete(`https://mytopfilms.herokuapp.com/users/${localStorage.getItem('user')}/movies/${favorites}/${movie._id}`, 
+    axios.delete(`https://mytopfilms.herokuapp.com/users/${localStorage.getItem('user')}/movies/${favorites}/`, 
      { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } 
     }).then(response => {
       this.getUser(localStorage.getItem('token'));
@@ -54,9 +54,9 @@ export class ProfileView extends React.Component {
       alert('Movie can\'t be removed')
     });
   }
-  handleChange(e, favorite) {
+  handleChange(e, favorites) {
     this.setState({ [e.target.name]: e.target.value });
-    this.setState({ [favorite.target.name]: favorite.target.value });
+    this.setState({ [favorites.target.name]: favorites.target.value });
   }
   render() {  
     const { username, email, birthday, favorites} = this.state;
