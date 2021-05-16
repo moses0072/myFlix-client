@@ -28,45 +28,47 @@ export class ProfileView extends React.Component {
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
-    this.getUser(accessToken);
+    this.getUser();
     }
   }
 
   getUser() {
     this.setState({
-      username: localStorage.getItem("user"),
-      email: localStorage.getItem("email"),
+      username: localStorage.getItem('user'),
+      email: localStorage.getItem('email'),
       birthday: localStorage.getItem('birthday'),
-      favorites: localStorage.getItem("FavoriteMovies"),
+      favorites: JSON.parse(localStorage.getItem('favoriteMovies'))
     });
   }
 
   //Delete Movie from user favorite list
-  removeFavorite(e, favorites) {
-    e.preventDefault();
-    
-    axios.delete(`https://mytopfilms.herokuapp.com/users/${localStorage.getItem('user')}/movies/${favorites}/`, 
+  removeFavorite(favorite) {   
+    axios.delete(`https://mytopfilms.herokuapp.com/users/${localStorage.getItem('user')}/favorites/${favorite._id}/`, 
      { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } 
     }).then(response => {
-      this.getUser(localStorage.getItem('token'));
+      localStorage.setItem('favoriteMovies', JSON.stringify(response.data.FavoriteMovies));
+      this.getUser();
+      console.log(response);
+      alert(`${favorite.Title} has been removeed from your Favorite list!`);
     }).catch (err => {
       console.log(err.response);
       alert('Movie can\'t be removed')
     });
   }
+
   handleChange(e, favorites) {
     this.setState({ [e.target.name]: e.target.value });
     this.setState({ [favorites.target.name]: favorites.target.value });
   }
+  
   render() {  
     const { username, email, birthday, favorites} = this.state;
-    const movies = JSON.parse(localStorage.getItem('movies')); 
-     const favoriteMovieList = movies.filter((movie => {
+     const favoriteMovieList = this.props.movies.filter((movie => {
       return (
-        movies.includes(movie._id)
+        favorites.includes(movie._id)
       );
     }));
-    console.log(movies);
+
     return(
       <div className='log-reg-view'>
         <Card className='log-reg-view'>
@@ -90,14 +92,14 @@ export class ProfileView extends React.Component {
                 FavoriteMovies:
                 <div>
                     <ul>
-                      {favoriteMovieList.map(favorites => (
-                        <li key={favorites}>
+                      {favoriteMovieList.map(favorite => (
+                        <li key={favorite}>
+                          <span className='text-color'>
                           {
-                            favoriteMovieList.find(
-                              movie => movie._id === favorites
-                            ).Title
+                            favorite.Title
                           }
-                          <Button className='primary-btn' onClick={() => this.removeFavorite(favorites)}><span className='text-color'>Remove Favorite Movie</span></Button>                           
+                          </span>
+                          <Button className='primary-btn' onClick={() => this.removeFavorite(favorite)}><span className='text-color'>Remove Favorite Movie</span></Button>                           
                         </li>                        
                       ))}
                     </ul> 
@@ -108,11 +110,11 @@ export class ProfileView extends React.Component {
           <div>
             <Container>
               <Row>
-                <Link to={`/update/:username`}>
-                  <Button className='primary-btn'><span className='text-color'>Update</span></Button>
+                <Link to={`/update/${localStorage.getItem('user')}`} className='btn primary-btn'>
+                  <span className='text-color'>Update</span>
                 </Link>
-                <Link to={`/`}>
-                  <Button className='primary-btn'><span className='text-color'>Back</span></Button>
+                <Link to={`/`} className='btn primary-btn'>
+                  <span className='text-color'>Back</span>
                 </Link>
               </Row>
             </Container>

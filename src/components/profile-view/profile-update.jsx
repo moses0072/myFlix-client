@@ -15,7 +15,7 @@ export function ProfileUpdate(props) {
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
 
-  const user = props.user;
+  //const user = props.user;
   
   //Update profile
   const handleUpdate = e => {
@@ -31,8 +31,8 @@ export function ProfileUpdate(props) {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
     .then(response => {
-        props.updateUser(userInfo);
-        alert("Profile has been Updated");
+      updateUser(userInfo);
+      alert("Profile has been Updated");
       })
       .catch(e => {
         const errors = e.response.data.errors || [];

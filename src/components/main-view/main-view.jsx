@@ -56,7 +56,7 @@ export class MainView extends React.Component {
       this.setState({
         movies: response.data 
       });
-      localStorage.setItem("movies", JSON.stringify(response.data));
+      localStorage.setItem('movies', JSON.stringify(response.data));
     })
       .catch(function(error) {
         console.log(error);
@@ -65,15 +65,24 @@ export class MainView extends React.Component {
 
   //When a user successfully logs in , this function updates the user property in state to that particular user
   onLoggedIn(authData) {
-    console.log(authData);
+    // console.log(authData);
+    const userInfo = {
+      username: authData.user.Username,
+      email: authData.user.Email,
+      birthday: authData.user.Birthday
+    };
+
     this.setState({
-      user: authData.user.Username
+      user: authData.user.Username,
+      userInfo: userInfo
     });
+
+    
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
     localStorage.setItem('email', authData.user.Email);
     localStorage.setItem('birthday', authData.user.Birthday);
-    localStorage.setItem('movies', authData.user.FavoriteMovies);
+    localStorage.setItem('favoriteMovies', JSON.stringify(authData.user.FavoriteMovies));
     this.getMovies(authData.token);
   }
 
@@ -205,7 +214,7 @@ export class MainView extends React.Component {
                     <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
                   </Col>)
 
-                  if (movies.length === 0) return <div className="main-view" />;
+                  if (movies.length === 0) return <div className='main-view' />;
 
                   return (
                   <Col md={8}>
@@ -219,21 +228,21 @@ export class MainView extends React.Component {
                     <LoginView onLoggedIn = {user => this.onLoggedIn(user)} />
                   </Col>)
 
-                  if (movies.length === 0) return <div className="main-view" />;
+                  if (movies.length === 0) return <div className='main-view' />;
 
                   return (
                   <Col md={8}>
-                    <ProfileView userInfo={userInfo} onBackClick={() => history.goBack()} />
+                    <ProfileView userInfo={userInfo} movies={movies} onBackClick={() => history.goBack()} />
                   </Col>)
                 }} />
                 
-                <Route path="/update/:username" render={({ history }) => {
+                <Route path='/update/:username' render={({ history }) => {
                   if (!user) return (
                   <Col md={6}>
                     <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                   </Col>)
 
-                  if (movies.length === 0) return <div className="main-view" />;
+                  if (movies.length === 0) return <div className='main-view' />;
 
                   return (
                   <Col md={8}>
