@@ -25,11 +25,11 @@ export function  MovieView(props) {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     }
     ).then(response => {
-      console.log(response);
+      localStorage.setItem('favoriteMovies', JSON.stringify(response.data.FavoriteMovies));
       alert('Movie has been added to your Favorite list!');
       }). catch (e => {
         console.log('can\'t adding movie to your Favorites');
-        alert('Movie could\'t added to favorites!');
+        alert('Movie could\'t added to favorites!, allready exisit');
       });
   }
 

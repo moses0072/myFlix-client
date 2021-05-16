@@ -145,11 +145,11 @@ export class MainView extends React.Component {
               </Link>
               
               <Link to={`/users/${user}`}>
-                <Button variant='primary' className='primary-btn'><span className='text-color'>My Profile</span></Button>
+                { !!user && <Button variant='primary' className='primary-btn'><span className='text-color'>My Profile</span></Button> }
               </Link>
 
               <Link to={`/`}>
-                <Button variant='primary' className='primary-btn' onClick={() => this.onLoggedOut()}><span className='text-color'>Logout</span></Button>
+                {!!user && <Button variant='primary' className='primary-btn' onClick={() => this.onLoggedOut()}><span className='text-color'>Logout</span></Button>}
               </Link>  
               </Nav>
             </Navbar.Collapse>

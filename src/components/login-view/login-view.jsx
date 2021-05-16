@@ -29,7 +29,7 @@ export function LoginView(props) {
         const data = response.data;
         props.onLoggedIn(data);
       }).catch(e => {
-        console.log('User does\'t exist');
+        alert('User does\'t exist, don\'t you have a user name? Register!!');
       });
     }  
   };

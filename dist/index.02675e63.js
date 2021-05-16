@@ -26705,14 +26705,14 @@ try {
             lineNumber: 147,
             columnNumber: 15
           }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
+        }, !!user && /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
           variant: "primary",
           className: "primary-btn",
           __self: this,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 148,
-            columnNumber: 17
+            columnNumber: 29
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("span", {
           className: "text-color",
@@ -26720,7 +26720,7 @@ try {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 148,
-            columnNumber: 67
+            columnNumber: 79
           }
         }, "My Profile"))), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Link, {
           to: `/`,
@@ -26730,7 +26730,7 @@ try {
             lineNumber: 151,
             columnNumber: 15
           }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
+        }, !!user && /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
           variant: "primary",
           className: "primary-btn",
           onClick: () => this.onLoggedOut(),
@@ -26738,7 +26738,7 @@ try {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 152,
-            columnNumber: 17
+            columnNumber: 28
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("span", {
           className: "text-color",
@@ -26746,7 +26746,7 @@ try {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 152,
-            columnNumber: 102
+            columnNumber: 113
           }
         }, "Logout")))))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Container, {
           __self: this,
@@ -31938,11 +31938,11 @@ try {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
       }).then(response => {
-        console.log(response);
+        localStorage.setItem('favoriteMovies', JSON.stringify(response.data.FavoriteMovies));
         alert('Movie has been added to your Favorite list!');
       }).catch(e => {
         console.log('can\'t adding movie to your Favorites');
-        alert('Movie could\'t added to favorites!');
+        alert('Movie could\'t added to favorites!, allready exisit');
       });
     }
     return (
@@ -34081,7 +34081,7 @@ try {
           const data = response.data;
           props.onLoggedIn(data);
         }).catch(e => {
-          console.log('User does\'t exist');
+          alert('User does\'t exist, don\'t you have a user name? Register!!');
         });
       }
     };
