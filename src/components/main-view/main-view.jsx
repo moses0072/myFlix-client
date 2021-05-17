@@ -1,5 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+
+//new
+import { connect } from 'react-redux';
+
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
@@ -8,12 +12,17 @@ import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
+//#0
+import { setMovies } from '../../actions/actions';
+import MoviesList from '../movies-list/movies-list';
+
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
-import { MovieCard } from '../movie-card/movie-card';
+//without MovieCard
+//import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import {DirectorView} from '../director-view/director-view';
 import {GenreView} from '../genre-view/genre-view';
@@ -23,17 +32,15 @@ import { ProfileUpdate } from '../profile-view/profile-update';
 
 
 import './main-view.scss';
-
-export class MainView extends React.Component {
+//#2 removed export keyword 
+class MainView extends React.Component {
   
   constructor() {
     super();
-    this.state = {
-      movies: [],
-      selectedMovie: null,
+    //#3 removed movies state
+    this.state = {    
       user: null,
-      userInfo:{},
-      register: null
+      userInfo:{},  
     };
   }
 
@@ -53,9 +60,8 @@ export class MainView extends React.Component {
     })
     .then(response => {
       //Assign the result to the state
-      this.setState({
-        movies: response.data 
-      });
+      //#4 changed from this state to this props
+      this.props.setMovies(response.data);
       localStorage.setItem('movies', JSON.stringify(response.data));
     })
       .catch(function(error) {
@@ -129,13 +135,15 @@ export class MainView extends React.Component {
 
   
   render() {
-    const {movies, user, userInfo, token} = this.state;
-
+    //#5 movies extracted from this.props
+    let { movies } = this.props;
+    const { user, userInfo, token} = this.state;
+    
     return (
       <div>
         <Router>
           <Navbar  className='log-reg-view' expand='lg'>
-            <Navbar.Brand id='navbar-brand'><span className='text-color'>MyTopFilms</span></Navbar.Brand>
+            <Navbar.Brand id='navbar-brand'><span className='text-dark font-italic h2 font-weight-bold'>My<span className='text-primary'>Top</span>Films</span></Navbar.Brand>
             <Navbar.Toggle aria-controls='basic-navbar-nav' />
             <Navbar.Collapse id='basic-navbar-nav'>
               <Nav className='mr-auto'>
@@ -164,13 +172,9 @@ export class MainView extends React.Component {
                     </Col>);
 
                     if (movies.length === 0) return <div className ='main-view' />;
-
-                    return (
-                      movies.map(m => (
-                      <Col md={4} key={m._id}>
-                        <MovieCard movie={m} />
-                      </Col>
-                    )))
+                    //#6
+                    return <MoviesList movies ={movies}/>;
+                    
                 }} />
 
                 <Route path='/register' render={() => {
@@ -259,3 +263,10 @@ export class MainView extends React.Component {
         
   }  
 }
+//#7
+let mapStateToProps = state => {
+  return { movies: state.movies }
+}
+
+//#8
+export default connect(mapStateToProps, { setMovies } )(MainView);

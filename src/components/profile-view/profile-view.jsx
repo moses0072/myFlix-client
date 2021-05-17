@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup'
 import Row from 'react-bootstrap/Row';
 import { Link } from 'react-router-dom';
-import Col from 'react-bootstrap/Col';
+
 
 
 
@@ -49,17 +49,17 @@ export class ProfileView extends React.Component {
       localStorage.setItem('favoriteMovies', JSON.stringify(response.data.FavoriteMovies));
       this.getUser();
       console.log(response);
-      alert(`${favorite.Title} has been removeed from your Favorite list!`);
+      alert(`${favorite.Title} has been removed from your Favorite list!`);
     }).catch (err => {
       console.log(err.response);
       alert('Movie can\'t be removed')
     });
   }
 
-  handleChange(e, favorites) {
+  /*handleChange(e, favorites) {
     this.setState({ [e.target.name]: e.target.value });
     this.setState({ [favorites.target.name]: favorites.target.value });
-  }
+  }*/
   
   render() {  
     const { username, email, birthday, favorites} = this.state;
