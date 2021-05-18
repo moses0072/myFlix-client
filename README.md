@@ -14,11 +14,19 @@ with state routing to navigate between views and share URLs.
 </div>
 
 2. **After login users could see lot of films and their description**
-    * they could search for a film by title.
+    * They could search for a movie by title.
+    * They could view the details of each Movie.
+    * They could add movies to their favorite list.
   
   <div align='center'>
 <img src='https://github.com/moses0072/myFlix-client/blob/final/images/first.png' alt='Alt text' title='login' style='max-width:100%'>
 </div>
 
+3. **Users will have their own profile**
+    * They could change their information.
+    * They could remove their favorite movies.
+    * They could delete their account
 
-
+   <div align='center'>
+<img src='https://github.com/moses0072/myFlix-client/blob/final/images/profile.png' alt='Alt text' title='login' style='max-width:100%'>
+</div>
