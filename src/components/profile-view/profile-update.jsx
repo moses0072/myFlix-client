@@ -10,13 +10,11 @@ import './profile-view.scss';
 
 export function ProfileUpdate(props) {
   
-  const {user, userInfo,token, updateUser } = props;
+  const {user, userInfo, updateUser } = props;
   const [username, setUsername] = useState(userInfo.username);
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState(userInfo.email);
-  const [birthday, setBirthday] = useState(userInfo.birthday);
-
-  //const user = props.user;
+  const [birthday, setBirthday] = useState(userInfo.birthday); 
   
   //Update profile
   const handleUpdate = e => {
@@ -27,7 +25,7 @@ export function ProfileUpdate(props) {
       Email: email,
       Birthday: birthday
     };
-
+    
     axios.put(`https://mytopfilms.herokuapp.com/users/${user}`, userInfo, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })

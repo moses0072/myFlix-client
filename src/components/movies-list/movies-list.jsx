@@ -23,7 +23,7 @@ function MovieList(props) {
   if (!movies) return <div className='main-view' />;
 
   return <>
-  <Col md={12} style={{margin: '1em' }}>
+  <Col md={9} style={{margin: '1em' }}>
     <VisibilityFilterInput visibilityFilter={visibilityFilter} />  
   </Col> 
   {

@@ -35829,7 +35829,15 @@ try {
             lineNumber: 15,
             columnNumber: 11
           }
-        }, "Name: "), /*#__PURE__*/_reactDefault.default.createElement("span", {
+        }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+          className: "text-primary",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15,
+            columnNumber: 35
+          }
+        }, "Name: ")), /*#__PURE__*/_reactDefault.default.createElement("span", {
           className: "value",
           __self: this,
           __source: {
@@ -35853,7 +35861,15 @@ try {
             lineNumber: 19,
             columnNumber: 11
           }
-        }, "Description: "), /*#__PURE__*/_reactDefault.default.createElement("span", {
+        }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+          className: "text-primary",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19,
+            columnNumber: 35
+          }
+        }, "Description: ")), /*#__PURE__*/_reactDefault.default.createElement("span", {
           className: "value",
           __self: this,
           __source: {
@@ -47774,12 +47790,11 @@ try {
   var _jsxFileName = "C:\\Users\\User\\Documents\\careerfoundry\\myFlix-client\\src\\components\\profile-view\\profile-update.jsx", _s = $RefreshSig$();
   function ProfileUpdate(props) {
     _s();
-    const {user, userInfo, token, updateUser} = props;
+    const {user, userInfo, updateUser} = props;
     const [username, setUsername] = _react.useState(userInfo.username);
     const [password, setPassword] = _react.useState('');
     const [email, setEmail] = _react.useState(userInfo.email);
     const [birthday, setBirthday] = _react.useState(userInfo.birthday);
-    // const user = props.user;
     // Update profile
     const handleUpdate = e => {
       e.preventDefault();
@@ -47826,14 +47841,14 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66,
+          lineNumber: 64,
           columnNumber: 5
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67,
+          lineNumber: 65,
           columnNumber: 7
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default, {
@@ -47841,14 +47856,14 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68,
+          lineNumber: 66,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("div", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69,
+          lineNumber: 67,
           columnNumber: 11
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
@@ -47856,14 +47871,14 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70,
+          lineNumber: 68,
           columnNumber: 13
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71,
+          lineNumber: 69,
           columnNumber: 15
         }
       }, "Username"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -47873,7 +47888,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72,
+          lineNumber: 70,
           columnNumber: 15
         }
       })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
@@ -47881,14 +47896,14 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75,
+          lineNumber: 73,
           columnNumber: 13
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76,
+          lineNumber: 74,
           columnNumber: 15
         }
       }, "Password"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -47898,7 +47913,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77,
+          lineNumber: 75,
           columnNumber: 15
         }
       })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
@@ -47906,14 +47921,14 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80,
+          lineNumber: 78,
           columnNumber: 13
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81,
+          lineNumber: 79,
           columnNumber: 15
         }
       }, "Email"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -47923,7 +47938,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82,
+          lineNumber: 80,
           columnNumber: 15
         }
       })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
@@ -47931,14 +47946,14 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85,
+          lineNumber: 83,
           columnNumber: 13
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86,
+          lineNumber: 84,
           columnNumber: 15
         }
       }, "Birthday"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -47948,14 +47963,14 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87,
+          lineNumber: 85,
           columnNumber: 15
         }
       })), /*#__PURE__*/_reactDefault.default.createElement("div", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90,
+          lineNumber: 88,
           columnNumber: 13
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -47965,7 +47980,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91,
+          lineNumber: 89,
           columnNumber: 15
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -47973,7 +47988,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91,
+          lineNumber: 89,
           columnNumber: 84
         }
       }, "Update"), " "), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Link, {
@@ -47981,7 +47996,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93,
+          lineNumber: 91,
           columnNumber: 15
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -47989,7 +48004,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94,
+          lineNumber: 92,
           columnNumber: 17
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -47997,7 +48012,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94,
+          lineNumber: 92,
           columnNumber: 49
         }
       }, "Profile"))), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Link, {
@@ -48005,7 +48020,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97,
+          lineNumber: 95,
           columnNumber: 15
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -48013,7 +48028,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 98,
+          lineNumber: 96,
           columnNumber: 17
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -48021,14 +48036,14 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 98,
+          lineNumber: 96,
           columnNumber: 49
         }
       }, "Back"))), /*#__PURE__*/_reactDefault.default.createElement("div", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 101,
+          lineNumber: 99,
           columnNumber: 15
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -48039,7 +48054,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102,
+          lineNumber: 100,
           columnNumber: 17
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -48047,7 +48062,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102,
+          lineNumber: 100,
           columnNumber: 103
         }
       }, "Delete Profile"))))))))
@@ -49549,7 +49564,7 @@ try {
     );
     return (
       /*#__PURE__*/_reactDefault.default.createElement(_reactDefault.default.Fragment, null, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-        md: 12,
+        md: 9,
         style: {
           margin: '1em'
         },
