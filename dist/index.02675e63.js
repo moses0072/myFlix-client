@@ -27144,7 +27144,15 @@ try {
           lineNumber: 45,
           columnNumber: 15
         }
-      }, "Title: "), /*#__PURE__*/_reactDefault.default.createElement("span", {
+      }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+        className: "text-primary",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45,
+          columnNumber: 39
+        }
+      }, "Title: ")), /*#__PURE__*/_reactDefault.default.createElement("span", {
         className: "value",
         __self: this,
         __source: {
@@ -27168,7 +27176,15 @@ try {
           lineNumber: 50,
           columnNumber: 15
         }
-      }, "Director: "), /*#__PURE__*/_reactDefault.default.createElement("span", {
+      }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+        className: "text-primary",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 50,
+          columnNumber: 39
+        }
+      }, "Director: ")), /*#__PURE__*/_reactDefault.default.createElement("span", {
         className: "value",
         __self: this,
         __source: {
@@ -27192,7 +27208,15 @@ try {
           lineNumber: 55,
           columnNumber: 15
         }
-      }, "Genre: "), /*#__PURE__*/_reactDefault.default.createElement("span", {
+      }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+        className: "text-primary",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55,
+          columnNumber: 39
+        }
+      }, "Genre: ")), /*#__PURE__*/_reactDefault.default.createElement("span", {
         className: "value",
         __self: this,
         __source: {
@@ -27216,7 +27240,15 @@ try {
           lineNumber: 60,
           columnNumber: 15
         }
-      }, "Description: "), /*#__PURE__*/_reactDefault.default.createElement("span", {
+      }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+        className: "text-primary",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60,
+          columnNumber: 39
+        }
+      }, "Description: ")), /*#__PURE__*/_reactDefault.default.createElement("span", {
         className: "value",
         __self: this,
         __source: {
@@ -33791,19 +33823,34 @@ try {
           lineNumber: 64,
           columnNumber: 5
         }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
-        controlId: "formUsername",
+      }, /*#__PURE__*/_reactDefault.default.createElement("h1", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 65,
           columnNumber: 7
         }
-      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
+      }, "Welcome to my", /*#__PURE__*/_reactDefault.default.createElement("span", {
+        className: "text-primary",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 65,
+          columnNumber: 24
+        }
+      }, "Top"), "films"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
+        controlId: "formUsername",
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 66,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67,
           columnNumber: 9
         }
       }, "Username:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -33814,7 +33861,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67,
+          lineNumber: 68,
           columnNumber: 9
         }
       })), Object.keys(usernameError).map(key => {
@@ -33825,7 +33872,7 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 73,
+              lineNumber: 74,
               columnNumber: 11
             }
           }, usernameError[key], " ")
@@ -33835,14 +33882,14 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77,
+          lineNumber: 78,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78,
+          lineNumber: 79,
           columnNumber: 11
         }
       }, "Password"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -33853,7 +33900,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79,
+          lineNumber: 80,
           columnNumber: 11
         }
       })), Object.keys(passwordError).map(key => {
@@ -33864,7 +33911,7 @@ try {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 84,
+              lineNumber: 85,
               columnNumber: 11
             }
           }, passwordError[key])
@@ -33877,7 +33924,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88,
+          lineNumber: 89,
           columnNumber: 7
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -33885,7 +33932,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88,
+          lineNumber: 89,
           columnNumber: 94
         }
       }, "Login")), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Link, {
@@ -33893,7 +33940,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89,
+          lineNumber: 90,
           columnNumber: 7
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -33903,7 +33950,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90,
+          lineNumber: 91,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -33911,7 +33958,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90,
+          lineNumber: 91,
           columnNumber: 74
         }
       }, "Register"))))
@@ -36127,7 +36174,7 @@ try {
             columnNumber: 25
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("span", {
-          className: "text-color",
+          className: "text-primary",
           __self: this,
           __source: {
             fileName: _jsxFileName,
@@ -49646,7 +49693,15 @@ try {
             lineNumber: 16,
             columnNumber: 11
           }
-        }, movie.Title), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default.Text, {
+        }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+          className: "text-primary",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 16,
+            columnNumber: 23
+          }
+        }, movie.Title)), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default.Text, {
           __self: this,
           __source: {
             fileName: _jsxFileName,

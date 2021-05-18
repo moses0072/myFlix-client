@@ -94,7 +94,7 @@ export class ProfileView extends React.Component {
                     <ul>
                       {favoriteMovieList.map(favorite => (
                         <li key={favorite}>
-                          <span className='text-color'>
+                          <span className='text-primary'>
                           {
                             favorite.Title
                           }

@@ -42,22 +42,22 @@ export function  MovieView(props) {
             </div>
 
             <div className='movie-title'>
-              <span className='lable'>Title: </span>
+              <span className='lable'><span className='text-primary'>Title: </span></span>
               <span className='value'>{movie.Title}</span>
             </div>
 
             <div className='movie-director'>
-              <span className='lable'>Director: </span>
+              <span className='lable'><span className='text-primary'>Director: </span></span>
               <span className='value'>{movie.Director.Name}</span>
             </div>
 
             <div className='movie-genre'>
-              <span className='lable'>Genre: </span>
+              <span className='lable'><span className='text-primary'>Genre: </span></span>
               <span className='value'>{movie.Genre.Name}</span>
             </div>
 
             <div className='movie-description'>
-              <span className='lable'>Description: </span>
+              <span className='lable'><span className='text-primary'>Description: </span></span>
               <span className='value'>{movie.Description}</span>
             </div>
             <div>

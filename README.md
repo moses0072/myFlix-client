@@ -27,9 +27,13 @@ with state routing to navigate between views and share URLs.
     * They could remove their favorite movies.
     * They could delete their account
 
-<p float='left'>
+<div float='left'>
 <img src='https://github.com/moses0072/myFlix-client/blob/final/images/profile.png' alt='Alt text' title='profile' style='max-width:100%'>
 <img src='https://github.com/moses0072/myFlix-client/blob/final/images/update.png' alt='Alt text' title='Update' style='max-width:100%'>
-</p>
+</div>
 
+## Install dependencies
 
+<pre>
+<code>npm install</code>
+</pre>
