@@ -10,6 +10,15 @@ with state routing to navigate between views and share URLs.
 
 1. **Users could Register and login**
 <div align='center'>
-<img src='https://github.com/moses0072/myFlix-client/blob/final/images/log_reg.png' alt='Alt text' title='login' style='max-width:50px'>
+<img src='https://github.com/moses0072/myFlix-client/blob/final/images/log_reg.png' alt='Alt text' title='Register or login' style='max-width:100%'>
 </div>
+
+2. **After login users could see lot of films and their description**
+    * they could search for a film by title.
+  
+  <div align='center'>
+<img src='https://github.com/moses0072/myFlix-client/blob/final/images/first.png' alt='Alt text' title='login' style='max-width:100%'>
+</div>
+
+
 
