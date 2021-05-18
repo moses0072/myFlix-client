@@ -10,4 +10,3 @@ with state routing to navigate between views and share URLs.
 
 *Users could Register and login
 ![GitHub Logo](/images/log_reg.png)
-Format: ![Alt Text](https://github.com/moses0072/myFlix-client/blob/final/images/log_reg.png)
