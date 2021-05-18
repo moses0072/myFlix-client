@@ -9,5 +9,7 @@ with state routing to navigate between views and share URLs.
 ## How it works:
 
 *Users could Register and login
-
+<div align='center'>
 ![GitHub Logo](/images/log_reg.png)
+</div>
+
