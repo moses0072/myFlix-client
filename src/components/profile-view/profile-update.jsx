@@ -9,11 +9,12 @@ import { Link } from "react-router-dom";
 import './profile-view.scss';
 
 export function ProfileUpdate(props) {
- 
-  const [username, setUsername] = useState('');
+  
+  const {user, userInfo,token, updateUser } = props;
+  const [username, setUsername] = useState(userInfo.username);
   const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
-  const [birthday, setBirthday] = useState('');
+  const [email, setEmail] = useState(userInfo.email);
+  const [birthday, setBirthday] = useState(userInfo.birthday);
 
   //const user = props.user;
   
@@ -36,7 +37,7 @@ export function ProfileUpdate(props) {
       })
       .catch(e => {
         const errors = e.response.data.errors || [];
-        let errorMessage = "";
+        let errorMessage = '';
         errors.forEach(err => {
           errorMessage += err.msg;
         });
@@ -53,12 +54,12 @@ export function ProfileUpdate(props) {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       })
       .then(response => {
-        alert("Your account has been deleted");
+        alert('Your account has been deleted');
         localStorage.clear();
-        window.open("/", "_self");
+        window.open('/', '_self');
       })
       .catch(e => {
-        console.log("Error deleting your account");
+        console.log('Error deleting your account');
       });
   };
   return (
