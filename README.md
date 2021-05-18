@@ -28,6 +28,7 @@ with state routing to navigate between views and share URLs.
     * They could delete their account
 
    <div align='center'>
-<img src='https://github.com/moses0072/myFlix-client/blob/final/images/profile.png https://github.com/moses0072/myFlix-client/blob/final/images/profile.png' alt='Alt text' title='login' style='max-width:100%'>
+<img src='https://github.com/moses0072/myFlix-client/blob/final/images/profile.png' alt='Alt text' title='profile' style='max-width:100%'>
+<img src='https://github.com/moses0072/myFlix-client/blob/final/images/update.png' alt='Alt text' title='Update' style='max-width:100%'>
 </div>
 
