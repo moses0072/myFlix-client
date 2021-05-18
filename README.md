@@ -8,8 +8,8 @@ with state routing to navigate between views and share URLs.
 
 ## How it works:
 
-*Users could Register and login
+**Users could Register and login
 <div align='center'>
-<img src=https://github.com/moses0072/myFlix-client/blob/final/images/log_reg.png
+<img src='https://github.com/moses0072/myFlix-client/blob/final/images/log_reg.png' alt='Alt text' title='login' style='max-width:100%'>
 </div>
 
