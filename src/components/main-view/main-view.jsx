@@ -21,8 +21,6 @@ import Nav from "react-bootstrap/Nav";
 
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
-//without MovieCard
-//import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import {DirectorView} from '../director-view/director-view';
 import {GenreView} from '../genre-view/genre-view';
@@ -32,9 +30,8 @@ import { ProfileUpdate } from '../profile-view/profile-update';
 
 
 import './main-view.scss';
-//#2 removed export keyword 
+
 class MainView extends React.Component {
-  
   constructor() {
     super();
     //#3 removed movies state
@@ -53,14 +50,13 @@ class MainView extends React.Component {
       this.getMovies(accessToken);
     }
   }
-
+  //Get all of the movies after login
   getMovies(token) {
     axios.get('https://mytopfilms.herokuapp.com/movies', {
       headers: {Authorization: `Bearer ${token}`}
     })
     .then(response => {
       //Assign the result to the state
-      //#4 changed from this state to this props
       this.props.setMovies(response.data);
       localStorage.setItem('movies', JSON.stringify(response.data));
     })
@@ -71,19 +67,16 @@ class MainView extends React.Component {
 
   //When a user successfully logs in , this function updates the user property in state to that particular user
   onLoggedIn(authData) {
-    // console.log(authData);
     const userInfo = {
       username: authData.user.Username,
       email: authData.user.Email,
       birthday: authData.user.Birthday
     };
-
     this.setState({
       user: authData.user.Username,
       userInfo: userInfo
     });
-
-    
+ 
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
     localStorage.setItem('email', authData.user.Email);
@@ -91,7 +84,7 @@ class MainView extends React.Component {
     localStorage.setItem('favoriteMovies', JSON.stringify(authData.user.FavoriteMovies));
     this.getMovies(authData.token);
   }
-
+  //Users logout
   onLoggedOut() {
     this.setState({
       user:null
@@ -129,13 +122,12 @@ class MainView extends React.Component {
     
   onRegister(register) {
     this.setState({
-      register:true
+      register: true
     });
   }
 
   
   render() {
-    //#5 movies extracted from this.props
     let { movies } = this.props;
     const { user, userInfo, token} = this.state;
     

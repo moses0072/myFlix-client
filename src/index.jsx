@@ -5,7 +5,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import moviesApp from './reducers/reducers';
 import { devToolsEnhancer } from 'redux-devtools-extension';
-//removed the curly braces
+
 import  MainView  from './components/main-view/main-view';
 
 //Import statment to indicate that you need to bundle `./index.scss`
